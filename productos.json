@@ -1,0 +1,26 @@
+[
+	{
+		"nombre": "Mesa",
+		"precio": 100,
+		"stock": 321,
+		"id": "2"
+	},
+	{
+		"nombre": "DDR2",
+		"precio": 200,
+		"stock": 111,
+		"id": "4"
+	},
+	{
+		"nombre": "DDR3",
+		"precio": 300,
+		"stock": 111,
+		"id": "5"
+	},
+	{
+		"nombre": "CPU",
+		"precio": 361.54,
+		"stock": 123,
+		"id": "6"
+	}
+]
