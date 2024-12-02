@@ -13,8 +13,8 @@ class Servicio {
     }
     
     guardarVenta = async venta => {
-        const productoGuardado = await this.model.guardarVenta(venta)
-        return productoGuardado
+        const ventaGuardada = await this.model.guardarVenta(venta)
+        return ventaGuardada
     }
 }
 

@@ -1,5 +1,4 @@
 class ModelVentasMem {
-    static ultimoId=7;
     constructor() {
         this.ventas = [
             { id: '1', idJuego: '1', cantidad: 100 },
@@ -11,22 +10,16 @@ class ModelVentasMem {
             { id: '7', idJuego: '3', cantidad: 800 },
         ]
     }
-    static obtenerUlitmoID(){
-        return this.ultimoId
-    }
-    static incrementarUlitmoID(){
-        this.ultimoId++
-    }
+
 
     obtenerVentas = async () => this.ventas
 
     guardarVenta = async venta => {
-        venta.id = String(parseInt(getUlitmoID()++))  // ?. optional chaining
+        venta.id = String(parseInt(this.ventas[this.ventas.length-1]?.id || 0) + 1)  // ?. optional chaining
         venta.idJuego = venta.idJuego
         venta.cantidad = parseInt(venta.cantidad)
-        incrementarUlitmoID()
-        this.productos.push(producto)
-        return producto    
+        this.ventas.push(venta)
+        return venta    
     }
 }
 
