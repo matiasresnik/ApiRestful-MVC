@@ -1,51 +1,34 @@
-class ModelMem {
-
+class ModelProductosMem {
+    static ultimoId=5;
     constructor() {
         this.productos = [
-            { id: '1', nombre: 'TV', precio: 1234.56, stock: 55 },
-            { id: '2', nombre: 'Mesa', precio: 2345.67, stock: 77 },
-            { id: '3', nombre: 'Mouse', precio: 3456.78, stock: 99 },
+            { id: '1', nombre: 'TEG', categoria: 'estrategia', precio: 100.25, stock: 123 },
+            { id: '2', nombre: 'Uno', categoria: 'cartas', precio: 50.00, stock: 77 },
+            { id: '3', nombre: 'Harry Potter', categoria: 'rol', precio: 548.5, stock: 99 },
+            { id: '4', nombre: 'Carrera de Mente', categoria: 'familiar', precio: 200.50, stock: 100 },
+            { id: '5', nombre: 'Life', categoria: 'familiar', precio: 325.00, stock: 91 }
         ]
+    }
+    static obtenerUlitmoID(){
+        return this.ultimoId
+    }
+    static incrementarUlitmoID(){
+        this.ultimoId++
     }
 
     obtenerProductos = async () => this.productos
 
     guardarProducto = async producto => {
-        producto.id = String(parseInt(this.productos[this.productos.length-1]?.id || 0) + 1)  // ?. optional chaining
-        
-        producto.stock = parseInt(producto.stock)
+        producto.id = String(parseInt(getUlitmoID()++))  // ?. optional chaining
+        producto.nombre = producto.nombre
+        producto.categoria = producto.categoria
         producto.precio = +producto.precio
-
+        producto.stock = parseInt(producto.stock)
+        incrementarUlitmoID()
         this.productos.push(producto)
         return producto    
     }
 
-    actualizarProducto = async (id, producto) => {
-        producto.id = id
-
-        const index = this.productos.findIndex(p => p.id === id)
-        if(index != -1) {
-            const productoAnt = this.productos[index]
-            const productoAct = { ...productoAnt, ...producto } // Spread Operator + Object Merge
-            this.productos.splice(index, 1, productoAct)
-
-            return productoAct
-        }
-        else {
-            return {}
-        }
-    }
-
-    borrarProducto = async id => {
-        let producto = {}
-
-        const index = this.productos.findIndex(p => p.id === id)
-        if(index != -1) {
-            producto = this.productos.splice(index, 1)[0]
-        }
-
-        return producto
-    }
 }
 
-export default ModelMem
+export default ModelProductosMem

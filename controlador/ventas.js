@@ -6,6 +6,15 @@ class Controlador {
         this.servicio = new Servicio()
     }
 
+    obtenerVentas = async (req,res) => {
+        try {
+            const ventas = await this.servicio.obtenerVentas()
+            res.status(200).json(ventas)
+        }
+        catch(error) {
+            res.status(500).json({error: error.message})
+        }
+    }
     guardarVenta = async (req,res) => {
         try {
             const venta = req.body

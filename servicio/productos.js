@@ -1,4 +1,4 @@
-import ModelFactory from "../model/DAOs/productosFactory.js"
+import ModelProductoFactory from "../model/DAOs/productosFactory.js"
 
 import config from '../config.js'
 import { validar } from "./validaciones/producto.js"
@@ -7,18 +7,12 @@ import { validar } from "./validaciones/producto.js"
 
 class Servicio {
     constructor() {
-        this.model = ModelFactory.get(config.MODO_PERSISTENCIA)
+        this.model = ModelProductoFactory.get(config.MODO_PERSISTENCIA)
     }
 
-    obtenerProductos = async id => {
-        if (id) {
-            const producto = await this.model.obtenerProducto(id)
-            return producto
-        }
-        else {
-            const productos = await this.model.obtenerProductos()
-            return productos
-        }
+    obtenerProductos = async () => {
+        const productos = await this.model.obtenerProductos()
+        return productos
     }
 
     guardarProducto = async producto => {

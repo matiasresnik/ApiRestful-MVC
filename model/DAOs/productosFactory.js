@@ -1,21 +1,17 @@
-import ModelMem from "./productosMem.js"
+import ModelProductosMem from "./productosMem.js"
 
-class ModelFactory {
-    static id=0;
+class ModelProductosFactory {
     static get(tipo) {
         switch (tipo) {
             case 'MEM':
                 console.log('*** Persistiendo en Memoria ***')
-                return new ModelMem()
+                return new ModelProductosMem()
 
             default:
                 console.log('*** Persistiendo en Memoria (default) ***')
-                return new ModelMem()
+                return new ModelProductosMem()
         }
-    }
-    static getNextId(){
-        return String(id++)
     }
 }
 
-export default ModelFactory
+export default ModelProductosFactory

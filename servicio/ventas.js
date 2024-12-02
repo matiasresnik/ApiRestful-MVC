@@ -1,27 +1,20 @@
-import ModelFactory from "../model/DAOs/ventasFactory.js"
+import ModelVentasFactory from "../model/DAOs/ventasFactory.js"
 
 import config from '../config.js'
 
 class Servicio {
     constructor() {
-        this.model = ModelFactory.get(config.MODO_PERSISTENCIA)
+        this.model = ModelVentasFactory.get(config.MODO_PERSISTENCIA)
     }
-
-    obtenerProductos = async () => {
-        const productos = await this.model.obtenerProductos()
-        return productos
+    
+    obtenerVentas = async () => {
+        const ventas = await this.model.obtenerVentas()
+        return ventas
     }
-
-    guardarProducto = async producto => {
-        //validación específica del producto a guardar 
-        const rta = validar(producto)
-        if (rta.result) {
-            const productoGuardado = await this.model.guardarProducto(producto)
-            return productoGuardado
-        }
-        else {
-            throw rta.error
-        }
+    
+    guardarVenta = async venta => {
+        const productoGuardado = await this.model.guardarVenta(venta)
+        return productoGuardado
     }
 }
 
