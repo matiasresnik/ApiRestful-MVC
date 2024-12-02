@@ -1,26 +1,30 @@
 [
 	{
+		"id": "1",
+		"nombre": "TEG",
+		"categoria": "estrategia",
+		"precio": 100.25,
+		"stock": 123
+	},
+	{
 		"id": "2",
-		"nombre": "Mesa",
-		"precio": 100,
-		"stock": 321
+		"nombre": "Uno",
+		"categoria": "cartas",
+		"precio": 60.50,
+		"stock": 10
 	},
 	{
-		"nombre": "DDR2",
-		"precio": 200,
-		"stock": 111,
-		"id": "4"
+		"id": "3",
+		"nombre": "Harry Potter",
+		"categoria": "rol",
+		"precio": 500.20,
+		"stock": 20
 	},
 	{
-		"nombre": "DDR3",
-		"precio": 300,
-		"stock": 111,
-		"id": "5"
-	},
-	{
-		"nombre": "CPU",
-		"precio": 361.54,
-		"stock": 123,
-		"id": "6"
+		"id": "4",
+		"nombre": "Carrera de Mente",
+		"categoria": "familiar",
+		"precio": 200.00,
+		"stock": 85
 	}
 ]

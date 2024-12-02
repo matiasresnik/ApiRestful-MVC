@@ -7,13 +7,16 @@ export const validar = producto => {
 
     const productoSchema = Joi.object({
         nombre: Joi.string().alphanum().required(),
+        categoria: Joi.string().alphanum().required(),
         precio: Joi.number().min(0).max(1000000).required(),
         stock: Joi.number().integer().min(0).max(9999).required()
     })
 
-    const { error } = productoSchema.validate(producto)
+    let { error } = productoSchema.validate(producto)
+    error = "“Los datos ingresados no son válidos " + error
     if(error) {
         return { result: false, error }
     }
     return { result: true }
 }
+

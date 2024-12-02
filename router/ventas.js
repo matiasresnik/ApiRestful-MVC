@@ -1,5 +1,5 @@
 import express from 'express'
-import Controlador from '../controlador/productos.js'
+import Controlador from '../controlador/ventas.js'
 
 class Router {
     constructor() {
@@ -8,8 +8,7 @@ class Router {
 
     start() {
         const router = express.Router()
-        router.get('/', this.controlador.obtenerProductos)
-        router.post('/', this.controlador.guardarProducto)
+        router.post('/', this.controlador.guardarVenta)
         return router
     }
 }

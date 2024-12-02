@@ -8,9 +8,8 @@ class Controlador {
 
     obtenerProductos = async (req,res) => {
         try {
-           const { id } = req.params
-            const productos = await this.servicio.obtenerProductos(id)
-            res.json(productos)
+            const productos = await this.servicio.obtenerProductos()
+            res.status(200).json(productos)
         }
         catch(error) {
             res.status(500).json({error: error.message})
@@ -25,31 +24,13 @@ class Controlador {
             if(!Object.keys(producto).length) throw new Error('producto vacío')
 
             const productoGuardado = await this.servicio.guardarProducto(producto)
-            res.json(productoGuardado)
+            res.status(200).json(productoGuardado)
         }
         catch(error) {
             res.status(500).json({error: error.message})
         }
     }
 
-    actualizarProducto = async (req,res) => {
-        const { id } = req.params
-        const producto = req.body
-        const productoActualizado = await this.servicio.actualizarProducto(id, producto)
-        res.json(productoActualizado)
-    }
-
-    borrarProducto = async (req,res) => {
-        const { id } = req.params
-        const productoEliminado = await this.servicio.borrarProducto(id)
-        res.json(productoEliminado)
-    }
-
-    calculoProductos = async (req,res) => {
-        const { tipo } = req.params
-        const resultado = await this.servicio.calculoProductos(tipo)
-        res.json(resultado)
-    }
 }
 
 export default Controlador

@@ -1,4 +1,5 @@
 class ModelMem {
+
     constructor() {
         this.productos = [
             { id: '1', nombre: 'TV', precio: 1234.56, stock: 55 },
@@ -8,11 +9,6 @@ class ModelMem {
     }
 
     obtenerProductos = async () => this.productos
-
-    obtenerProducto = async id => {
-        const producto = this.productos.find(p => p.id === id)
-        return producto || {}
-    }
 
     guardarProducto = async producto => {
         producto.id = String(parseInt(this.productos[this.productos.length-1]?.id || 0) + 1)  // ?. optional chaining

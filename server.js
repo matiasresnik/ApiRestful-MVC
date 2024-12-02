@@ -1,8 +1,8 @@
 import express from 'express'
 import RouterProductos from './router/productos.js'
+import Routerventas from './router/ventas.js'
 
 import config from './config.js'
-import CnxMongoDB from './model/DBMongo.js'
 
 const app = express()
 
@@ -13,14 +13,10 @@ app.use(express.urlencoded({extended:true}))
 //     ApiRestful: productos
 // ----------------------------------
 app.use('/api/productos', new RouterProductos().start())
+app.use('/api/ventas', new Routerventas().start())
 
 
-//-----------------------------------
-//    Listen del servidor http
-//-----------------------------------
-if(config.MODO_PERSISTENCIA == 'MONGODB') {
-    await CnxMongoDB.conectar()
-}
+
 
 const PORT = config.PORT
 const server = app.listen(PORT, () => console.log(`Servidor ApiRestful escuchando en http://localhost:${PORT}`))
