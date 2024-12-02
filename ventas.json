@@ -1,9 +1,9 @@
 [
 	{
-		"id": "2",
 		"nombre": "Mesa",
 		"precio": 100,
-		"stock": 321
+		"stock": 321,
+		"id": "2"
 	},
 	{
 		"nombre": "DDR2",
