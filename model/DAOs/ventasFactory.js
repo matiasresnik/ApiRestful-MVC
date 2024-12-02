@@ -1,4 +1,4 @@
-import ModelVentasMem from './ventasMem.js'
+import ModelVentasMem from './VentasMem.js'
 
 class ModelVentasFactory {
     static get(tipo) {

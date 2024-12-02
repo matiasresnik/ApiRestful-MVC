@@ -13,7 +13,6 @@ export const validar = producto => {
     })
 
     let { error } = productoSchema.validate(producto)
-    error = "“Los datos ingresados no son válidos " + error
     if(error) {
         return { result: false, error }
     }

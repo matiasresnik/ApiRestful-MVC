@@ -1,4 +1,4 @@
-import ModelVentasFactory from "../model/DAOs/ventasFactory.js"
+import ModelVentasFactory from "../model/DAOs/VentasFactory.js"
 
 import config from '../config.js'
 
