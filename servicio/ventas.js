@@ -7,10 +7,11 @@ class Servicio {
         this.model = ModelVentasFactory.get(config.MODO_PERSISTENCIA)
     }
     
-    obtenerVentas = async () => {
+    //Lo dejo para que se pueda testar nada mas
+   /* obtenerVentas = async () => {
         const ventas = await this.model.obtenerVentas()
         return ventas
-    }
+    } */
     
     guardarVenta = async venta => {
         const ventaGuardada = await this.model.guardarVenta(venta)

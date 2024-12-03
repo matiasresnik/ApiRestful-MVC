@@ -9,7 +9,8 @@ class Router {
     start() {
         const router = express.Router()
         router.post('/', this.controlador.guardarVenta)
-        router.get('/', this.controlador.obtenerVentas)
+        //Lo dejo para que se pueda testar nada mas
+        /* router.get('/', this.controlador.obtenerVentas) */
 
         return router
     }

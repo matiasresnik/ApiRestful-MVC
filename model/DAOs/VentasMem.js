@@ -11,9 +11,9 @@ class ModelVentasMem {
         ]
     }
 
-
-    obtenerVentas = async () => this.ventas
-
+    //Lo dejo para que se pueda testar nada mas
+    /* obtenerVentas = async () => this.ventas*/
+ 
     guardarVenta = async venta => {
         venta.id = String(parseInt(this.ventas[this.ventas.length-1]?.id || 0) + 1)  // ?. optional chaining
         venta.idJuego = venta.idJuego
